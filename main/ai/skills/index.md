@@ -31,10 +31,10 @@ Current branch: !`git branch --show-current`
 
 ## Skill Locations
 
-| Scope   | Path                                     |
-| ------- | ---------------------------------------- |
-| Project | `.atuin/skills/<name>/SKILL.md`          |
-| Global  | `~/.config/atuin/skills/<name>/SKILL.md` |
+| Scope   | Path                              |
+| ------- | --------------------------------- |
+| Project | `.atuin/skills/<name>/SKILL.md`   |
+| Global  | `~/.atuin/skills/<name>/SKILL.md` |
 
 Project skills override global skills when names collide. Nested directories are supported for organization (for example, `.atuin/skills/ops/deploy/SKILL.md`).
 
@@ -68,7 +68,7 @@ When the LLM determines a skill is relevant to your request, it calls `load_skil
 
 ## Dynamic Content
 
-Skills support the same shell substitution as [user context files](https://docs.atuin.sh/ai/user-context/index.md):
+Skills support shell substitution:
 
 - **Inline:** `!`command`` ` — replaced with command ``stdout\`
 - **Block:** ```` ```! ```` code block — entire block replaced with script `stdout`

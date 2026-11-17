@@ -11,14 +11,14 @@ Atuin runs on a range of shells and operating systems, but not every combination
 
 Feature coverage varies by shell:
 
-| Tier       | Shell   | History search | Inline popup | Dotfiles | Atuin AI | pty-proxy |
-| ---------- | ------- | -------------- | ------------ | -------- | -------- | --------- |
-| **1**      | zsh     | ✓              | ✓            | ✓        | ✓        | ✓         |
-| bash       | ✓       | ✓              | ✓            | ✓        | ✓        |           |
-| fish       | ✓       | ✓              | ✓            | ✓        | ✓        |           |
-| **2**      | nushell | ✓              | ✗            | ✗        | ✗        | ✓         |
-| xonsh      | ✓       | ✗              | ✓            | ✗        | ✗        |           |
-| PowerShell | ✓       | ✗              | ✓            | ✗        | ✗        |           |
+| Tier       | Shell   | History search | Inline popup | Atuin AI | pty-proxy |
+| ---------- | ------- | -------------- | ------------ | -------- | --------- |
+| **1**      | zsh     | ✓              | ✓            | ✓        | ✓         |
+| bash       | ✓       | ✓              | ✓            | ✓        |           |
+| fish       | ✓       | ✓              | ✓            | ✓        |           |
+| **2**      | nushell | ✓              | ✗            | ✗        | ✓         |
+| xonsh      | ✓       | ✗              | ✗            | ✗        |           |
+| PowerShell | ✓       | ✗              | ✗            | ✗        |           |
 
 ## Operating systems and architectures
 
@@ -41,7 +41,7 @@ Some key bindings depend on the terminal, not the shell. Terminals that implemen
 
 ## AI agents
 
-Atuin records commands run by AI coding agents through their hook systems. See [AI agent hooks](https://docs.atuin.sh/guide/agent-hooks/index.md) for setup. The supported agents are *Claude Code*, *Codex*, *Copilot*, *opencode* and *pi*.
+Atuin records commands run by AI coding agents through their hook systems. See [AI agent hooks](https://docs.atuin.sh/guide/agent-hooks/index.md) for setup. The supported agents are *Claude Code*, *Codex*, *Copilot*, *Hermes Agent*, *Kiro*, *opencode* and *pi*.
 
 ## Getting help
 

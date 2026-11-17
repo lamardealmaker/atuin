@@ -2,7 +2,7 @@
 
 Atuin uses shell hooks to capture your command history. This page explains how the integration works, and why Atuin might not record commands in certain environments.
 
-To keep specific commands *out* of your history on purpose, see [Excluding Commands from History](https://docs.atuin.sh/guide/excluding-commands/index.md).
+To keep specific commands *out* of your history on purpose, see [Keeping Secrets Out of Atuin](https://docs.atuin.sh/guide/excluding-commands/index.md).
 
 ## How Atuin's Shell Integration Works
 
@@ -23,13 +23,14 @@ If any of these conditions aren't met, Atuin won't install its hooks, and it won
 
 When Atuin initializes, it sets several environment variables:
 
-| Variable               | Purpose                                                                     |
-| ---------------------- | --------------------------------------------------------------------------- |
-| `ATUIN_SESSION`        | Unique identifier for this shell session                                    |
-| `ATUIN_SHLVL`          | Tracks shell nesting level                                                  |
-| `ATUIN_HISTORY_ID`     | Temporary ID for the currently executing command                            |
-| `ATUIN_HISTORY_AUTHOR` | Optional command author identity (for example `ellie`, `claude`, `copilot`) |
-| `ATUIN_HISTORY_INTENT` | Optional command intent/rationale text                                      |
+| Variable                    | Purpose                                                                                                                                                              |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ATUIN_SESSION`             | Unique identifier for this shell session                                                                                                                             |
+| `ATUIN_SHLVL`               | Tracks shell nesting level                                                                                                                                           |
+| `ATUIN_HISTORY_ID`          | Temporary ID for the currently executing command                                                                                                                     |
+| `ATUIN_HISTORY_AUTHOR`      | Optional command author identity (for example `ellie`, `claude`, `copilot`). A known agent name here marks entries as agent-run, unless it's also the local username |
+| `ATUIN_HISTORY_AUTHOR_KIND` | Optional: `user` or `agent`, overriding the classification inferred from the author name. Only applies when an author is stated                                      |
+| `ATUIN_HISTORY_INTENT`      | Optional command intent/rationale text                                                                                                                               |
 
 Atuin uses these variables internally to track command execution and associate commands with sessions. If `ATUIN_HISTORY_AUTHOR` isn't set, Atuin defaults to the local shell username.
 
